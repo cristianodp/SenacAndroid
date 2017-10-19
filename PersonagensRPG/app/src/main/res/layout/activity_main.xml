@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dev.personagensrpg.MainActivity">
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:hint="@string/personagem_nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/personagem_idade"
+        android:inputType="numberSigned"
+        android:layout_below="@+id/editTextRaca"
+        android:layout_alignLeft="@+id/editTextNome"
+        android:layout_alignStart="@+id/editTextNome"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextAtaque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/personagem_ataque"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/editTextIdade"
+        android:layout_alignLeft="@+id/editTextIdade"
+        android:layout_alignStart="@+id/editTextIdade"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/editTextDefesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/personagem_defesa"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/editTextAtaque"
+        android:layout_alignLeft="@+id/editTextAtaque"
+        android:layout_alignStart="@+id/editTextAtaque"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDefesa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:onClick="clickCadastrar"
+        android:text="@string/personagem_cadastrar" />
+
+
+    <EditText
+        android:id="@+id/editTextRaca"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNome"
+        android:layout_marginTop="14dp"
+        android:hint="@string/personagem_raca"
+        android:layout_alignRight="@+id/editTextNome"
+        android:layout_alignEnd="@+id/editTextNome"
+        android:layout_alignLeft="@+id/editTextNome"
+        android:layout_alignStart="@+id/editTextNome">
+
+    </EditText>
+
+
+</RelativeLayout>

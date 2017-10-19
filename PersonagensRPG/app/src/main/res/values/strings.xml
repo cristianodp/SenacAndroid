@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PersonagensRPG</string>
+    <string name="personagem_nome">Nome do personagem</string>
+    <string name="personagem_raca">Raça do personagem</string>
+    <string name="personagem_idade">Idade do personagem</string>
+    <string name="personagem_defesa">Defesa do personagem</string>
+    <string name="personagem_ataque">Ataque do personagem</string>
+
+    <string name="personagem_cadastrar">Cadastrar</string>
+
+</resources>
+
