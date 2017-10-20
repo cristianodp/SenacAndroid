@@ -24,10 +24,10 @@
         android:ems="10"
         android:hint="@string/personagem_idade"
         android:inputType="numberSigned"
-        android:layout_below="@+id/editTextRaca"
+        android:layout_below="@+id/radioGroup"
         android:layout_alignLeft="@+id/editTextNome"
         android:layout_alignStart="@+id/editTextNome"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="19dp" />
 
     <EditText
         android:id="@+id/editTextAtaque"
@@ -63,21 +63,43 @@
         android:onClick="clickCadastrar"
         android:text="@string/personagem_cadastrar" />
 
-
-    <EditText
-        android:id="@+id/editTextRaca"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextNome"
-        android:layout_marginTop="14dp"
-        android:hint="@string/personagem_raca"
-        android:layout_alignRight="@+id/editTextNome"
-        android:layout_alignEnd="@+id/editTextNome"
-        android:layout_alignLeft="@+id/editTextNome"
-        android:layout_alignStart="@+id/editTextNome">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
 
-    </EditText>
+        <RadioButton
+            android:id="@+id/radioButtonAnao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Anão" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHumano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Humano" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mago" />
+
+        <RadioButton
+            android:id="@+id/radioButtonElfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Elfo" />
+    </RadioGroup>
 
 
 </RelativeLayout>

@@ -13,9 +13,14 @@ public class MainActivity extends AppCompatActivity {
     Personagem personagen;
     EditText editTextNome;
     EditText editTextIdade;
-    EditText editTextRaca;
+
     EditText editTextAteque;
     EditText editTextDefesa;
+
+    RadioButton radioButtonAnao;
+    RadioButton radioButtonHumano;
+    RadioButton radioButtonMago;
+    RadioButton radioButtonElfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
         editTextNome = (EditText) findViewById(R.id.editTextNome);
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
 
-        editTextRaca = (EditText) findViewById(R.id.editTextRaca);
+        radioButtonHumano = (RadioButton) findViewById(R.id.radioButtonHumano);
+        radioButtonAnao = (RadioButton) findViewById(R.id.radioButtonAnao);
+        radioButtonElfo = (RadioButton) findViewById(R.id.radioButtonElfo);
+        radioButtonMago = (RadioButton) findViewById(R.id.radioButtonMago);
 
         editTextAteque = (EditText) findViewById(R.id.editTextAtaque);
         editTextDefesa = (EditText) findViewById(R.id.editTextDefesa);
@@ -37,7 +45,26 @@ public class MainActivity extends AppCompatActivity {
         personagen = new Personagem();
 
         personagen.setNome(editTextNome.getText().toString());
-        personagen.setRaca(editTextRaca.getText().toString());
+
+
+        if (radioButtonHumano.isChecked()){
+            personagen.setRaca("Humano");
+        }
+
+        if (radioButtonElfo.isChecked()){
+            personagen.setRaca("Elfo");
+        }
+
+        if (radioButtonAnao.isChecked()){
+            personagen.setRaca("Anão");
+        }
+
+        if (radioButtonMago.isChecked()){
+            personagen.setRaca("Mago");
+        }
+
+
+        // personagen.setRaca(editTextRaca.getText().toString());
         personagen.setIdade(Integer.parseInt(editTextIdade.getText().toString()));
         personagen.setAtaque(Float.parseFloat(editTextAteque.getText().toString()));
         personagen.setDefesa(Float.parseFloat(editTextDefesa.getText().toString()));
@@ -46,7 +73,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (erros == null) {
 
-            Toast.makeText(this,"Cadastrado com Sucesso!",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Cadastrado com Sucesso!",Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(this,DetalhesPersonagemActivity.class);
+
+            startActivity(i);
+
 
         }else{
 
