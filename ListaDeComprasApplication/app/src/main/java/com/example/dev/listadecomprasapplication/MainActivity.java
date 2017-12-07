@@ -2,7 +2,11 @@ package com.example.dev.listadecomprasapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -14,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editTextComprar;
     ListView listView;
-    ArrayAdapter<String> adapter;
-    List<String> lista;
+    AdapterItemComprar adapter;
+    List<ItemCompra> lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,34 +29,61 @@ public class MainActivity extends AppCompatActivity {
         editTextComprar = (EditText) findViewById(R.id.editTextCompra);
         listView = (ListView) findViewById(R.id.listView);
 
-        lista = new ArrayList<String>();
+        lista = new ArrayList<ItemCompra>();
 
 
 
-        adapter = new ArrayAdapter<String>(this
-                ,android.R.layout.simple_list_item_1
-                ,android.R.id.text1
-                ,lista);
+        adapter = new AdapterItemComprar(this,lista);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                lista.remove(i);
+                adapter.notifyDataSetChanged();
+
+                return false;
+            }
+        });
 
     }
 
     public void clickAdd(View v){
         //Pegar item comprado
-        String itemComprar = editTextComprar.getText().toString();
+
+
+        ItemCompra itemCompra =  new ItemCompra();
+        itemCompra.nome = editTextComprar.getText().toString();
+        itemCompra.comprado = false;
 
         //Limpar campo na tela
         editTextComprar.setText("");
 
         //Adicionar item
-        lista.add(itemComprar);
+        lista.add(itemCompra);
 
         //notificar o adapter que um novo item foi adicionado
         adapter.notifyDataSetChanged();
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.mn_limpar){
+            lista.clear();
+            adapter.notifyDataSetChanged();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
-dd
