@@ -2,31 +2,60 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.dev.revisao.MainActivity">
 
     <TextView
-        android:id="@+id/textViewContador"
+        android:id="@+id/textViewContador1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
-        android:text="Contar: 0"
+        android:layout_marginTop="31dp"
+        android:text="Jogador 1: 0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonContar"
+        android:id="@+id/buttonContar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Contar"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewContador1"
+        app:layout_constraintRight_toRightOf="@+id/textViewContador1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContador1" />
+
+    <TextView
+        android:id="@+id/textViewContador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Jogador 2: 0"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewContador" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonContar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Contar"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewContador2"
+        app:layout_constraintRight_toRightOf="@+id/textViewContador2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContador2" />
 </android.support.constraint.ConstraintLayout>
