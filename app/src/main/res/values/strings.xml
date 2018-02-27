@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ExemploLogin</string>
+
+    //login
+    <string name="login_titulo">Exemplo Login</string>
+    <string name="ligin_usuario">Usuário</string>
+    <string name="ligin_senha">Senha</string>
+    <string name="login_btn_entrar">Entrar</string>
+</resources>
