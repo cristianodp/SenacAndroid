@@ -6,4 +6,13 @@
     <string name="ligin_usuario">Usuário</string>
     <string name="ligin_senha">Senha</string>
     <string name="login_btn_entrar">Entrar</string>
+    <string name="login_btn_cadastrar">Cadastra-se</string>
+
+    //cadastro
+    <string name="cadastro_nome">Nome do usuário</string>
+    <string name="cadastro_login">Login</string>
+    <string name="cadastro_senha">Senha</string>
+    <string name="cadastro_repetir_senha">Repetir senha</string>
+    <string name="cadastro_btn_cadastrar">Cadastrar</string>
+
 </resources>
