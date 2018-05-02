@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CarregandoImagens</string>
+
+    <string name="carro">Carro</string>
+    <string name="bicicleta">Bicicleta</string>
+
+</resources>
